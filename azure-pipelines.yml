@@ -10,8 +10,13 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
+
+- task: ShellScript@2
+  inputs:
+    scriptPath: transfer_image.sh
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
