@@ -11,7 +11,7 @@ pool:
 
 variables:
   CONTAINER_REGISTRY: pipelinepocs.azurecr.io
-  IMAGE_NAME: wso2am
+  IMAGE_NAME: wso2am/wso2am
   TAG: latest
 
 steps:
