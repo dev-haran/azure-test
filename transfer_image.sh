@@ -4,5 +4,5 @@ echo "| Pipeline test   |"
 echo "-------------------------------------------------- "
 
 docker pull wso2am/wso2am:3.1.0-beta
-docker tag wso2am/wso2am:3.1.0-beta pipeline_acr/wso2am/wso2am:latest
-docker push pipeline_acr/wso2am/wso2am:latest
+docker tag wso2am/wso2am:3.1.0-beta pipelinepocs.azurecr.io/wso2am/wso2am:latest
+docker push pipelinepocs.azurecr.io/wso2am/wso2am:latest
