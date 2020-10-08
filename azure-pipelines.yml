@@ -16,17 +16,10 @@ variables:
 
 steps:
 
-- script: echo Hello, world!
+- script: |
+    docker pull wso2am/wso2am:3.1.0-beta
+    docker login pipelinepocs.azurecr.io --username=pipelinepocs --password=SF+RkUmP0ACWlqW8f5OPVClRF4ceq7tC
+    docker tag wso2am/wso2am:3.1.0-beta pipelinepocs.azurecr.io/wso2am/wso2am:latest
+    docker push pipelinepocs.azurecr.io/wso2am/wso2am:latest
   displayName: 'Run a one-line script'
 
-- task: ShellScript@2
-  inputs:
-    scriptPath: transfer_image.sh
-
-- task: Docker@2
-  displayName: Push image
-  inputs:
-    containerRegistry: pipeline_acr
-    repository: $(IMAGE_NAME)
-    command: push
-    tags: $(TAG)
