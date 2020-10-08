@@ -28,5 +28,5 @@ steps:
     docker tag wso2am/wso2am:3.1.0-beta pipelinepocs.azurecr.io/wso2am/wso2am:latest
     docker push pipelinepocs.azurecr.io/wso2am/wso2am:latest
   displayName: 'Run a one-line script'
-  #commit
+  #commits
 
