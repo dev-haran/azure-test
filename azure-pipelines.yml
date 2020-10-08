@@ -1,4 +1,5 @@
 # Starter pipeline
+
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -15,7 +16,12 @@ variables:
   TAG: latest
 
 steps:
-
+- task: AzureKeyVault@1
+  inputs:
+    azureSubscription: 'Azure subscription 1(7eb13158-f96c-48b3-900f-9c9c83906ac7)'
+    KeyVaultName: 'acrpass'
+    SecretsFilter: '*'
+    RunAsPreJob: true
 - script: |
     docker pull wso2am/wso2am:3.1.0-beta
     docker login pipelinepocs.azurecr.io --username=pipelinepocs --password=SF+RkUmP0ACWlqW8f5OPVClRF4ceq7tC
