@@ -24,3 +24,4 @@ steps:
     docker push pipelinepocs.azurecr.io/wso2am/wso2am:latest
   displayName: 'Run a one-line script'
 
+#commit test
