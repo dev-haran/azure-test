@@ -18,9 +18,11 @@ steps:
     RunAsPreJob: true
 
 - script: |
-    docker pull wso2/wso2am:3.2.0
+    timestamp=$(date +%s)
+    docker login docker.wso2.com --username=ketharan@wso2.com --password=$(dockerpass)
+    docker pull  docker.wso2.com/wso2am:latest
     docker login pipelinepocs.azurecr.io --username=pipelinepocs --password=$(password)
-    docker tag wso2/wso2am:3.2.0 pipelinepocs.azurecr.io/wso2/wso2am:3.2.0
+    docker tag docker.wso2.com/wso2am:latest pipelinepocs.azurecr.io/wso2/wso2am:$timestamp
     docker push pipelinepocs.azurecr.io/wso2/wso2am:3.2.0
   displayName: 'Transfer the latest image to ACR'
 
