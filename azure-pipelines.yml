@@ -1,9 +1,3 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-
-# https://aka.ms/yaml
-
 trigger:
 - master
 
@@ -25,8 +19,8 @@ steps:
 
 - script: |
     docker pull wso2/wso2am:3.2.0
-    docker login pipelinepocs.azurecr.io --username=pipelinepocs --password=SF+RkUmP0ACWlqW8f5OPVClRF4ceq7tC
+    docker login pipelinepocs.azurecr.io --username=pipelinepocs --password=$(password)
     docker tag wso2/wso2am:3.2.0 pipelinepocs.azurecr.io/wso2/wso2am:3.2.0
     docker push pipelinepocs.azurecr.io/wso2/wso2am:3.2.0
-  displayName: 'Run a one-line script'
+  displayName: 'Transfer the latest image to ACR'
 
