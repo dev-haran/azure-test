@@ -26,7 +26,7 @@ steps:
 - script: |
     docker pull wso2/wso2am:3.2.0
     docker login pipelinepocs.azurecr.io --username=pipelinepocs --password=SF+RkUmP0ACWlqW8f5OPVClRF4ceq7tC
-    docker tag wso2/wso2am:3.2.0 pipelinepocs.azurecr.io/wso2/wso2am:3.2.0
-    docker push pipelinepocs.azurecr.io/wso2/wso2am:3.2.0
+    docker tag wso2/wso2am:3.2.0 pipelinepocs.azurecr.io/wso2/wso2am:latest
+    docker push pipelinepocs.azurecr.io/wso2/wso2am:latest
   displayName: 'Run a one-line script'
 
